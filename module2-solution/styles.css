@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 120%;
+    font-family: Arial, Sans-serif;
+}
+
+h1, h2 {
+    font-family: Times New Roman, Serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 175%;
+    margin: 2em;
+}
+
+.box {
+    overflow: auto;
+    border: 2px solid;
+    margin: 0 8px 16px;
+}
+
+/*
+    I know the instructions say to use absolute positioning in order to get the titles at the top-right corner, but
+    hey, there may be more than one way to do that. Also, using absolute positioning will require us to hard-code the
+    offset of the text, while floating it let us use "clear: right;"
+*/
+.box h2 {
+    font-size: 125%;
+    text-align: right;
+    background: #00F0FF;
+    margin-top: 0;
+    border: 2px solid blue;
+    border-width: 0 0 2px 2px;
+    padding: 5px;
+    float: right;
+}
+
+.box h2 + * {
+    clear: right;
+}
+
+.box p {
+    padding: 0 30px;
+}
+
+/* Colors */
+#box1 {
+    background: #faa;
+}
+
+#box2 {
+    background: #afa;
+}
+
+#box3 {
+    background: #aaf;
+}
+
+#box1 > h2 {
+    background: #0aa;
+    color: #fff;
+}
+
+#box2 > h2 {
+    background: #a0a;
+    color: #fff;
+}
+
+#box3 > h2 {
+    background: #aa0;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+    .col-lg-4 {
+        float: left;
+        width: 33%;
+    }
+
+    .box {
+        min-height: 15em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .col-md-6 {
+        float: left;
+        width: 50%;
+    }
+
+    .col-md-12 {
+        float: left;
+        width: 100%;
+    }
+
+    .box {
+        min-height: 10em;
+    }
+}
+
+@media (max-width: 767px) {
+    .col-sm-12 {
+        width: 100%;
+    }
+}
